@@ -1,10 +1,23 @@
+const express = require("express");
+const mongoose = require("mongoose");
+const databaseConfig = require("./config/database");
+
 class App {
   constructor() {
     this.express = express();
-    this.isDev = proccess.env.NODE_ENV !== "production";
+    this.isDev = process.env.NODE_ENV !== "production";
 
+    this.database();
     this.middlewares();
     this.routes();
+  }
+
+  database() {
+    mongoose.connect(databaseConfig.uri, {
+      useNewUrlParser: true,
+      useCreateIndex: true,
+      useUnifiedTopology: true
+    });
   }
 
   middlewares() {
@@ -12,7 +25,7 @@ class App {
   }
 
   routes() {
-    this.express.use(require("./routers"));
+    this.express.use(require("./routes"));
   }
 }
 
