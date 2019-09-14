@@ -24,4 +24,4 @@ const Ad = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model("Ad, Ad");
+module.exports = mongoose.model("Ad", Ad);
