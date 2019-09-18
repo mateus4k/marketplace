@@ -1,6 +1,4 @@
-# Marketplace
-
-### Made in Rocketseat!
+# Rocketseat Marketplace
 
 > REST API for a marketplace!
 
